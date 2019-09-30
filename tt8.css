@@ -1,0 +1,53 @@
+.fw{
+color:navy;
+text-align:center;
+}
+.hi{
+border:10px ridge dodgerblue;
+height:500px;
+width:90%;
+margin-left:60px;
+display:flex;
+background:lightskyblue;
+}
+ul.a{
+list-style-type:square;
+}
+ul li{
+padding:5px;
+margin-left:2px;
+}
+body{
+background:powderblue;
+}
+.uma img{
+width:400px;
+height:400px;
+margin:40px 40px 0px 280px;
+}
+
+@media screen and (min-width:320px) and (max-width:760px)
+{
+body{
+    width:100%;
+    }
+.hi{
+width:300px;
+height:1060px;
+display:block;
+margin-left:10px;
+}
+
+.fw{
+
+font-size:50px;
+}
+ul li{
+padding:1px;
+font-size:20px;
+}
+.uma img{
+width:285px;
+margin:0px 0px 0px 10px;
+}
+}
