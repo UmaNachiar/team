@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance</title>
+<link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+<select name="meal" id="meal" onChange="changecat(this.value);">
+    <option value="" disabled selected>Select</option>
+    <option value="A">Batch 1</option>
+    <option value="B">Batch 2</option>
+    <option value="C">Batch 3</option>
+</select>
+<select name="category" id="category">
+    <option value="" disabled selected>Select</option>
+</select>
+<script>
+var mealsByCategory = {
+    A: ["Ishu", "Kumudha", "Mythili", "Sangeetha","Suren","Uma"],
+    B: ["Hums", "Mano", "Meenu", "Ranju"],
+    C: ["poorni", "meenu", "irish", "kaviya", "sri"]
+}
+
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("category").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (categoryId in mealsByCategory[value]) {
+                catOptions += "<option>" + mealsByCategory[value][categoryId] + "</option>";
+            }
+            document.getElementById("category").innerHTML = catOptions;
+        }
+    }
+</script>
+</body>
+</html>

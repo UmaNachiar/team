@@ -1,0 +1,28 @@
+<html>
+<body>
+<table id="myTable">
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Occupation and Employer</th>
+        <th>Add</th>
+        <tr>
+            <td><input type="text" id="txtName" /></td>
+            <td><input type="text" id="txtAge" /></td>
+            <td><input type="text" id="txtGender" /></td>
+            <td><input type="text" id="txtOccupation" /></td>
+            <td id="btnAdd" class="button-add" onclick="insertRow();">add</td>
+        </tr>
+</table>
+<script type="text/javascript">
+    function insertRow(){
+                var table=document.getElementById("tbSibling");
+                var row=table.insertRow(2);
+                var cell1=row.insertCell(0);
+                var cell2=row.insertCell(1);
+                var cell3=row.insertCell(2);
+                var cell4=row.insertCell(3);
+    }
+</script>
+</body>
+</html>

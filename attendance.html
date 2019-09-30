@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance</title>
+<link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+<div class="head">
+<h1>SMI Trainee Attendance</h1><hr>
+<div class="main">
+<div>Name
+<select name="category" id="category">
+    <option value="" >Select</option>
+</select></div>
+<div>Batch
+<select name="meal" id="meal" onChange="changecat(this.value);">
+ <option value="" >Select</option>
+    <option value="Batch1">Batch 1</option>
+    <option value="Batch2">Batch 2</option>
+    <option value="Batch3">Batch 3</option>
+</select></div>
+<div>Date
+<input id="r" type="date">
+</div>
+
+<div >present/absent
+<label class="switch">
+  <input type="checkbox" onchange="add()" id="mycheckbox">
+  <span class="slider"><p id="link"></p></span>
+</label></div>
+<div><button onclick="myFunction()" class="button7">Add</button></div>
+</div>
+<table width="100%" id="myTable">
+<tr>
+<th>Name</th>
+<th>Batch</th>
+<th>Date</th>
+<th>Attendance</th>
+</tr>
+
+</table>
+<div class="bot">
+<button>Download</button>
+<button>Cancel</button>
+</div>
+</div>
+</body>
+<script>
+function add(){
+if(document.getElementById("mycheckbox").checked==true)
+{
+document.getElementById("link").innerHTML="abs";
+}
+else
+{
+document.getElementById("link").innerHTML="pre";
+}
+}
+var mealsByCategory = {
+    Batch1: ["Ishu", "Kumudha", "Mythili", "Sangeetha","Suren","Uma"],
+    Batch2: ["Hums", "Mano", "Meenu", "Ranju"],
+    Batch3: ["poorni", "meenu", "irish", "kaviya", "sri"]
+}
+
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("category").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (categoryId in mealsByCategory[value]) {
+                catOptions += "<option>" + mealsByCategory[value][categoryId] + "</option>";
+            }
+            document.getElementById("category").innerHTML = catOptions;
+        }
+    }
+function myFunction() {
+var a=document.getElementById("meal");
+var b=document.getElementById("category");
+var c=document.getElementById("r");
+var d=document.getElementById("link");
+if(a.value=="")
+{
+alert("Select batch");
+}
+
+else if(b.value=="")
+{
+alert("Select name");
+}
+
+else if(c.value=="")
+{
+alert("Select date");
+}
+
+else if(d.innerHTML=="")
+{
+alert("Select attend");
+}
+else{
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+var cell3 = row.insertCell(2);
+var cell4 = row.insertCell(3);
+  cell1.innerHTML = category.value;
+  cell2.innerHTML = meal.value;
+cell3.innerHTML = r.value;
+cell4.innerHTML=link.innerHTML;
+}
+}
+</script>
+</html>
